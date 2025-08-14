@@ -6,6 +6,7 @@ import { MdDateRange, MdTimer } from 'react-icons/md'
 import { AiOutlineGlobal } from 'react-icons/ai'
 import { MoviesContext } from '../../context/MoviesContex'
 import axios from 'axios'
+import SimilarMovies from '../SimilarMovies/SimilarMovies'
 function MovieDetails() {
     const { id } = useParams()
     const { data } = useContext(MoviesContext)
@@ -56,59 +57,71 @@ function MovieDetails() {
     }
 
     const formatRuntime = (runtimeInMinutes) => {
-    if (!runtimeInMinutes || runtimeInMinutes === 0) {
-        return "N/A"; 
-    }
-    const hours = Math.floor(runtimeInMinutes / 60);
-    const minutes = runtimeInMinutes % 60;
+        if (!runtimeInMinutes || runtimeInMinutes === 0) {
+            return "N/A";
+        }
+        const hours = Math.floor(runtimeInMinutes / 60);
+        const minutes = runtimeInMinutes % 60;
 
-    let formattedString = "";
-    if (hours > 0) {
-        formattedString += `${hours}h`;
-    }
-    if (minutes > 0) {
-        formattedString += ` ${minutes}m`;
-    }
-    return formattedString.trim();
-};
+        let formattedString = "";
+        if (hours > 0) {
+            formattedString += `${hours}h`;
+        }
+        if (minutes > 0) {
+            formattedString += ` ${minutes}m`;
+        }
+        return formattedString.trim();
+    };
+
     useEffect(() => {
+        window.scrollTo(0, 0); 
         fetchMovieDetails()
-    }, [])
+    }, [id])
     return (
-        <section className={styles.section_movie_details}>
-            {
-                isLoading
-                    ? renderSkeleton()
-                    :
-                    <>
-                        <aside className={styles.left_side}>
-                            <img src={movie?.large_cover_image} alt="cover photo" srcset="" />
-                        </aside>
-                        <aside className={styles.right_side}>
-                            <h1 className={styles.title}>{movie?.title}</h1>
-                            <div className={styles.statics}>
-                                <p className={styles.ratings}><IoMdStar color='#C9392F' /> {movie?.rating}</p>
-                                <p className={styles.time}><MdTimer color='#C9392F' /> {formatRuntime(movie?.runtime)}</p>
-                                <p className={styles.year}><MdDateRange color='#C9392F' /> {movie?.year} </p>
-                                <p className={styles.language}><AiOutlineGlobal color='#C9392F' /> {movie?.language} </p>
-                            </div>
-                            <div className={styles.categories}>
-                                {displayMovieGategories}
-                            </div>
-                            <p className={styles.description}>
-                                {
-                                    movie?.description_full != "" ? movie?.description_full 
-                                    : 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit consequuntur quia quae accusantium corrupti. Officia quidem, dignissimos blanditiis consequatur laudantium ab earum architecto sunt, ducimus excepturi pariatur provident fugit quaerat?'
-                                }
-                            </p>
-                            <Link to={`${movie?.url}`} className={styles.watch_button} target='_blank'>
-                                watch movie
-                            </Link>
-                        </aside>
-                    </>
-            }
+        <>
+            <section className={styles.section_movie_details}>
+                {
+                    isLoading
+                        ? renderSkeleton()
+                        :
+                        <>
+                            <aside className={styles.left_side}>
+                                <img src={movie?.large_cover_image} alt="cover photo" srcset="" />
+                            </aside>
+                            <aside className={styles.right_side}>
+                                <h1 className={styles.title}>{movie?.title}</h1>
+                                <div className={styles.statics}>
+                                    <p className={styles.ratings}><IoMdStar color='#C9392F' /> {movie?.rating}</p>
+                                    <p className={styles.time}><MdTimer color='#C9392F' /> {formatRuntime(movie?.runtime)}</p>
+                                    <p className={styles.year}><MdDateRange color='#C9392F' /> {movie?.year} </p>
+                                    <p className={styles.language}><AiOutlineGlobal color='#C9392F' /> {movie?.language} </p>
+                                </div>
+                                <div className={styles.categories}>
+                                    {displayMovieGategories}
+                                </div>
+                                <p className={styles.description}>
+                                    {
+                                        movie?.description_full != "" ? movie?.description_full
+                                            : 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit consequuntur quia quae accusantium corrupti. Officia quidem, dignissimos blanditiis consequatur laudantium ab earum architecto sunt, ducimus excepturi pariatur provident fugit quaerat?'
+                                    }
+                                </p>
+                                <Link to={`${movie?.url}`} className={styles.watch_button} target='_blank'>
+                                    watch movie
+                                </Link>
+                            </aside>
+                        </>
+                }
 
-        </section>
+
+            </section>
+
+            <section className={styles.section_similar_movies}>
+                <div className={styles.header_similar_movies}>
+                    <h1>Similar Movies</h1>
+                </div>
+                {movie?.genres?.length > 0 && <SimilarMovies genre={movie?.genres[0]} />}
+            </section>
+        </>
     )
 }
 
