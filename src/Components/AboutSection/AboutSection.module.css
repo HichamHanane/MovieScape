@@ -1,0 +1,112 @@
+.section_about_us{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 70px;
+    padding: 0 50px;
+
+}
+/* .left_side{
+    width: 50%;
+} */
+
+.right_side{
+    /* background-color: blueviolet; */
+    width: 80%;
+    
+    /* height: 300px; */
+}
+
+.healine{
+    color: white;
+    font-family: "Poppins", system-ui;
+    font-size: 3rem;
+}
+
+.slogan{
+    color: white;
+    font-family: "Poppins", system-ui;
+    font-size: 0.8rem;
+    letter-spacing: 0.2rem;
+    color:#C9392F;
+    font-weight: 300;
+}
+.description{
+    color: white;
+    width: 60%;
+    font-family: "Poppins", system-ui;
+    text-align: justify;
+    font-weight: 300;
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
+
+.movies_button{
+    cursor: pointer;
+    padding: 10px;
+    background-color: #C9392F;
+    color: white;
+    font-family: "Poppins", system-ui;
+    border: 2px solid #fff;
+    width: 20%;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+.movies_button:hover{
+    background-color: transparent;
+    border-color: #C9392F;
+    translate:0 -10px;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .section_about_us {
+        padding: 0 30px; /* Reduce padding for smaller screens */
+    }
+
+    .healine {
+        font-size: 2.5rem; /* Slightly reduce headline size */
+    }
+
+    .description {
+        width: 80%; /* Increase description width to fit the screen better */
+        font-size: 0.9rem; /* Increase font size for readability */
+    }
+
+    .movies_button {
+        width: 30%; /* Make the button a bit wider */
+    }
+}
+
+@media (max-width: 768px) {
+    .section_about_us {
+        flex-direction: column; /* Stack the sections vertically */
+        text-align: center; /* Center-align all text content */
+        margin-top: 30px; /* Adjust top margin for smaller screens */
+        padding: 0 20px; /* Adjust padding for smaller screens */
+    }
+
+    .left_side, .right_side {
+        width: 100%; /* Make both sections take full width */
+    }
+
+    .left_side {
+        order: 2; /* Move the text content below the animation */
+    }
+
+    .right_side {
+        order: 1; /* Move the animation to the top */
+    }
+
+    .healine {
+        font-size: 2rem; /* Reduce the headline font size */
+    }
+
+    .description {
+        width: 100%; /* Make the description take full width */
+        font-size: 0.9rem; /* Slightly increase the font size for better readability */
+    }
+
+    .movies_button {
+        width: 50%; /* Make the button wider */
+    }
+}

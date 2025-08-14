@@ -1,0 +1,25 @@
+.movie_page {
+    height: 100lvh;
+    background-color: black;
+}
+
+@media (max-width: 1024px) {
+    .movie_page {
+        height: 100lvh;
+
+    }
+}
+
+@media (max-width: 768px) {
+    .movie_page {
+        height: 100%;
+
+    }
+}
+
+@media (max-width: 480px) {
+    .movie_page {
+        height: 100%;
+
+    }
+}

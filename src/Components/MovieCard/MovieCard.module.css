@@ -1,0 +1,42 @@
+.movie_card{
+    height: 400px;
+    width: 300px;
+    background-color: rgb(247, 247, 247);
+    transition: 0.3s;
+
+}
+.movie_card:hover{
+    translate:0 -10px;
+}
+
+.ratings{
+    color: #C9392F;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    font-family: "Poppins", system-ui;
+    font-weight: 300;
+    font-size: 0.8rem;
+}
+
+.card_bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.link{
+    text-decoration: none;
+    color: white;
+    font-family: "Poppins", system-ui;
+    font-size: 0.6rem;
+    transition: 0.3s;
+
+}
+.view_more{
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+} 
+.link:hover{
+    color: #C9392F;
+}  

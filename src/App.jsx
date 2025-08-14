@@ -1,33 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect, useState } from 'react'
 import './App.css'
-
+import Home from './Pages/Home/Home'
+import * as XLSX from "xlsx";
+import axios from 'axios';
+import { Route, Routes } from 'react-router-dom';
+import Movies from './Pages/Movies/Movies';
+import { MoviesContext } from './context/MoviesContex';
+import About from './Pages/About/About';
+import Movie from './Pages/Movie/Movie';
 function App() {
-  const [count, setCount] = useState(0)
+  const [movies, setMovies] = useState([]);
+  let [isLoading , setIsLoading]=useState(true)
 
+  const fetchMovies = async () => {
+    setIsLoading(true)
+    let response = await axios.get('https://yts.mx/api/v2/list_movies.json?quality=3D');
+    setIsLoading(false);
+    console.log('Response :', response);
+    let data = response.data.data.movies;
+    console.log('Data : ', data);
+    setMovies(data)
+  }
+  
+  useEffect(() => {
+    fetchMovies();
+  }, []);
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <MoviesContext.Provider value={{data:movies , isLoading}}>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/movies' element={<Movies/>} />
+          <Route path='/about-us' element={<About/>} />
+          <Route path='/movie/:id' element={<Movie/>} />
+        </Routes>
+      </MoviesContext.Provider>
+
+
     </>
   )
 }

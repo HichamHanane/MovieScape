@@ -1,0 +1,46 @@
+header {
+    /* background-color: blue; */
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: "Jolly Lodger", system-ui;
+    color: white;
+    font-size: 3rem;
+    text-decoration: none;
+}
+
+.navLinks {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+}
+
+.navLink {
+    font-family: "Poppins", system-ui;
+    font-size: 1rem;
+    font-weight: 300;
+    color: #C9392F;
+    text-decoration: none;
+}
+
+/* Pour les écrans de taille moyenne et petits écrans */
+@media (max-width: 600px) {
+    header {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .logo {
+        font-size: 2.5rem;
+    }
+
+    .navLinks {
+        gap: 0.5rem;
+    }
+}

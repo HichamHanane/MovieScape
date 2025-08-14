@@ -1,0 +1,215 @@
+.headline {
+    color: white;
+    font-size: 2.5rem;
+    font-family: "Poppins", system-ui;
+
+}
+
+.slogan {
+    font-family: "Poppins", system-ui;
+    color: #C9392F;
+    font-weight: 300;
+}
+
+.section_movies {
+    margin-top: 30px;
+    height: 100%;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.search_bar {
+    border: 2px solid #C9392F;
+    ;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    padding: 0 10px;
+
+}
+
+.search_bar input {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    outline: none;
+    color: white;
+    font-family: "Poppins", system-ui;
+    font-weight: 300;
+
+
+}
+
+.search_icon {
+    cursor: pointer;
+    color: white;
+    /* background-color: blue; */
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+
+.movie_card_container {
+    /* background-color: blueviolet; */
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-wrap: wrap;
+    /* margin: 50px; */
+    margin: 0 auto;
+    flex-grow: 1;
+    column-gap: 1.2rem;
+    row-gap: 3rem;
+    /* background-color: blueviolet; */
+    width: 70%;
+    height: 100%;
+    padding-bottom: 30px;
+}
+
+.not_found{
+    color: #C9392F;
+    margin: 0 auto;
+    font-family: "Poppins", system-ui;
+    
+}
+
+
+/* This file contains styles specific to the skeleton loading state */
+
+/* Base skeleton styling */
+.skeleton_card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow: hidden;
+}
+
+/* Common styles for skeleton elements */
+.skeleton_image {
+    width: 300px;
+    height: 400px;
+    background-color: #e0e0e0;
+    /* A light grey for the placeholder */
+}
+
+.skeleton_text {
+    width: 60px;
+    /* Adjust width based on the content it's replacing */
+    height: 12px;
+    /* Adjust height to match font size */
+    background-color: #e0e0e0;
+    border-radius: 4px;
+}
+
+.skeleton_link {
+    width: 80px;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+}
+.card_bottom_skeleton{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* The 'shimmer' effect animation */
+.shimmer {
+    /* Define the gradient that will move across the skeleton */
+    background: linear-gradient(to right, #807676 8%, #f0f0f0 18%, #e0e0e0 33%);
+    background-size: 1200px 100%;
+    /* Adjust size for a wider shimmer effect */
+    animation: shimmer 1.5s infinite linear;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -468px 0;
+    }
+
+    100% {
+        background-position: 468px 0;
+    }
+}
+
+
+.noResultsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.noResultsContent {
+  text-align: center;
+  padding: 2rem;
+  background-color: transparent;
+  border: 1px solid #C9392F;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+  
+}
+
+.heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  color: #343a40;
+  margin: 0 0 0.5rem 0;
+}
+
+.message {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.actionButton {
+  background-color: #C9392F; /* Matching the color from your MovieCard.module.css */
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.actionButton:hover {
+  background-color: #a72e25;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .noResultsContent {
+    padding: 1.5rem;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  .message {
+    font-size: 0.9rem;
+  }
+}

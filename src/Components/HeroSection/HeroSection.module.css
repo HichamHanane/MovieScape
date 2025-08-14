@@ -1,0 +1,108 @@
+.sectionHero{
+    
+    /* background-color: blue; */
+    padding: 15px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40PX;
+}
+.leftSide{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    /* background-color: blue; */
+}
+.leftSide h1{
+    font-family: "Jolly Lodger", system-ui;
+    color: white;
+    font-size: 4.5rem;
+    font-weight: 300;
+    /* background-color: blue; */
+    width: 70%;
+
+}
+
+.slogan{
+    font-family: "Poppins", system-ui;
+    color: #C9392F;
+    font-weight: 300;
+    font-size: 1rem;
+    
+}
+
+.movies_button{
+    cursor: pointer;
+    padding: 10px;
+    background-color: #C9392F;
+    color: white;
+    font-family: "Poppins", system-ui;
+    border: 2px solid #fff;
+    width: 20%;
+    /* margin-top: 40px; */
+    transition: 0.3s;
+}
+.movies_button:hover{
+    background-color: transparent;
+    border-color: #C9392F;
+    translate:0 -10px;
+}
+.social_media{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.icon{
+    color: #fff;
+    font-size: 1.5rem;
+}
+.movieCard{
+    background-color: brown;
+    height: 400px;
+    width: 300px;
+}
+
+/* Pour les écrans de taille moyenne (tablettes) */
+@media (max-width: 900px) {
+    .sectionHero {
+        flex-direction: column;
+        text-align: center;
+        gap: 3rem;
+        margin-top: 20px;
+    }
+
+    .leftSide {
+        width: 100%;
+        align-items: center;
+    }
+
+    .leftSide h1 {
+        font-size: 3rem;
+        width: 100%;
+    }
+
+    .movies_button {
+        width: 40%;
+    }
+}
+
+/* Pour les petits écrans (téléphones) */
+@media (max-width: 600px) {
+    .sectionHero {
+        padding: 10px 20px;
+    }
+
+    .leftSide h1 {
+        font-size: 2.5rem;
+    }
+    
+    .slogan {
+        font-size: 0.9rem;
+    }
+
+    .movies_button {
+        width: 60%;
+        padding: 8px;
+    }
+}

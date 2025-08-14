@@ -1,0 +1,19 @@
+.homePage {
+    background: #000000;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 66%, rgba(255, 255, 255, 1) 66%);
+    height: 100lvh;
+    padding: 0 50px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    /* gap: 5.45rem; */
+}
+
+/* Pour les écrans de taille moyenne et petits écrans */
+@media (max-width: 900px) {
+    .homePage {
+        background: #000000;
+        padding: 0 20px;
+        height: 100svh;
+    }
+}

@@ -1,0 +1,78 @@
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    height: 30lvh;
+    margin-top: 20px;
+    border-top-left-radius: 50%;
+
+    border-top-right-radius: 50%;
+    /* border-top: 1px solid white; */
+    /* justify-content: ; */
+}
+.logo{
+    color: black;
+    font-family: "Jolly Lodger", system-ui;
+    font-size: 5rem;
+}
+.navlinks{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.link{
+    font-family: "Poppins", system-ui;
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: #C9392F;
+    transition: 0.3s;
+}
+
+.link:hover{
+    color: black;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .footer {
+        height: 25lvh; /* Slightly reduce the height for tablets */
+        border-top-left-radius: 40%;
+        border-top-right-radius: 40%;
+    }
+
+    .logo {
+        font-size: 4rem; /* Reduce the font size for the logo */
+    }
+
+    .navlinks {
+        gap: 1.5rem; /* Increase gap slightly for better spacing */
+    }
+
+    .link {
+        font-size: 1rem; /* Adjust link font size */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        height: auto; 
+        padding: 20px 0; 
+        border-top-left-radius: 25%;
+        border-top-right-radius: 25%;
+    }
+
+    .logo {
+        font-size: 3rem; 
+    }
+
+    .navlinks {
+        flex-direction: column; 
+        gap: 0.5rem; 
+        margin-top: 10px; 
+    }
+
+    .link {
+        font-size: 0.8rem; 
+    }
+}
