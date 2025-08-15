@@ -111,10 +111,8 @@ function MovieDetails() {
                             </aside>
                         </>
                 }
-
-
             </section>
-
+            {/* SIMILAR MOVIES */}
             <section className={styles.section_similar_movies}>
                 <div className={styles.header_similar_movies}>
                     <h1>Similar Movies</h1>

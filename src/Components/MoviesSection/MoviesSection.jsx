@@ -45,14 +45,14 @@ function MoviesSection() {
         console.log('selected :', SelectedValue);
 
         if (SelectedValue == "rating") {
-            let sortByRatings = filterMovie.sort((a, b) => a.rating - b.rating)
+            let sortByRatings = filterMovie.sort((a, b) => b.rating - a.rating)
             filterMovie = sortByRatings;
             console.log('Movies filter by rating :', filterMovie);
 
             return;
         }
         if (SelectedValue == "year") {
-            let sortByYear = filterMovie.sort((a, b) => a.year - b.year)
+            let sortByYear = filterMovie.sort((a, b) => b.year - a.year)
             filterMovie = sortByYear;
             console.log('Movies filter by sort :', filterMovie);
             return;
