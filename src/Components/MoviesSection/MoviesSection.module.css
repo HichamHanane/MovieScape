@@ -1,83 +1,112 @@
 .headline {
-    color: white;
-    font-size: 2.5rem;
-    font-family: "Poppins", system-ui;
+  color: white;
+  font-size: 2.5rem;
+  font-family: "Poppins", system-ui;
 
 }
 
 .slogan {
-    font-family: "Poppins", system-ui;
-    color: #C9392F;
-    font-weight: 300;
+  font-family: "Poppins", system-ui;
+  color: #C9392F;
+  font-weight: 300;
 }
 
 .section_movies {
-    margin-top: 30px;
-    height: 100%;
+  margin-top: 30px;
+  height: 100%;
 }
 
 .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
 }
-
+.filter_div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+}
 .search_bar {
-    border: 2px solid #C9392F;
-    ;
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px auto;
-    padding: 0 10px;
+  border: 2px solid #C9392F;
+  ;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
 
 }
 
 .search_bar input {
-    background-color: transparent;
-    border: none;
-    padding: 10px;
-    outline: none;
-    color: white;
-    font-family: "Poppins", system-ui;
-    font-weight: 300;
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  outline: none;
+  color: white;
+  font-family: "Poppins", system-ui;
+  font-weight: 300;
 
 
 }
 
 .search_icon {
-    cursor: pointer;
-    color: white;
-    /* background-color: blue; */
-    font-size: 1.5rem;
-    font-weight: 500;
+  cursor: pointer;
+  color: white;
+  /* background-color: blue; */
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
+.sort_by_div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  /* background-color: bisque; */
+  margin: 20px;
+  padding: 10px;
+  border: 2px solid #C9392F;
+  width: fit-content;
+}
+
+.sort_by_div label {
+  font-family: "Poppins", system-ui;
+  font-size: 0.8rem;
+  color: #C9392F;
+}
+
+.sort_by_div select {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: "Poppins", system-ui;
+  color: #a72e25;
+  
+}
 
 .movie_card_container {
-    /* background-color: blueviolet; */
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    flex-wrap: wrap;
-    /* margin: 50px; */
-    margin: 0 auto;
-    flex-grow: 1;
-    column-gap: 1.2rem;
-    row-gap: 3rem;
-    /* background-color: blueviolet; */
-    width: 70%;
-    height: 100%;
-    padding-bottom: 30px;
+  /* background-color: blueviolet; */
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-wrap: wrap;
+  /* margin: 50px; */
+  margin: 0 auto;
+  flex-grow: 1;
+  column-gap: 1.2rem;
+  row-gap: 3rem;
+  /* background-color: blueviolet; */
+  width: 70%;
+  height: 100%;
+  padding-bottom: 30px;
 }
 
-.not_found{
-    color: #C9392F;
-    margin: 0 auto;
-    font-family: "Poppins", system-ui;
-    
+.not_found {
+  color: #C9392F;
+  margin: 0 auto;
+  font-family: "Poppins", system-ui;
+
 }
 
 
@@ -85,59 +114,60 @@
 
 /* Base skeleton styling */
 .skeleton_card {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow: hidden;
 }
 
 /* Common styles for skeleton elements */
 .skeleton_image {
-    width: 300px;
-    height: 400px;
-    background-color: #e0e0e0;
-    /* A light grey for the placeholder */
+  width: 300px;
+  height: 400px;
+  background-color: #e0e0e0;
+  /* A light grey for the placeholder */
 }
 
 .skeleton_text {
-    width: 60px;
-    /* Adjust width based on the content it's replacing */
-    height: 12px;
-    /* Adjust height to match font size */
-    background-color: #e0e0e0;
-    border-radius: 4px;
+  width: 60px;
+  /* Adjust width based on the content it's replacing */
+  height: 12px;
+  /* Adjust height to match font size */
+  background-color: #e0e0e0;
+  border-radius: 4px;
 }
 
 .skeleton_link {
-    width: 80px;
-    height: 10px;
-    background-color: #e0e0e0;
-    border-radius: 4px;
+  width: 80px;
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
 }
-.card_bottom_skeleton{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+
+.card_bottom_skeleton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 
 /* The 'shimmer' effect animation */
 .shimmer {
-    /* Define the gradient that will move across the skeleton */
-    background: linear-gradient(to right, #807676 8%, #f0f0f0 18%, #e0e0e0 33%);
-    background-size: 1200px 100%;
-    /* Adjust size for a wider shimmer effect */
-    animation: shimmer 1.5s infinite linear;
+  /* Define the gradient that will move across the skeleton */
+  background: linear-gradient(to right, #807676 8%, #f0f0f0 18%, #e0e0e0 33%);
+  background-size: 1200px 100%;
+  /* Adjust size for a wider shimmer effect */
+  animation: shimmer 1.5s infinite linear;
 }
 
 @keyframes shimmer {
-    0% {
-        background-position: -468px 0;
-    }
+  0% {
+    background-position: -468px 0;
+  }
 
-    100% {
-        background-position: 468px 0;
-    }
+  100% {
+    background-position: 468px 0;
+  }
 }
 
 
@@ -166,7 +196,7 @@
   font-size: 3rem;
   margin-bottom: 1rem;
   display: block;
-  
+
 }
 
 .heading {
@@ -184,7 +214,8 @@
 }
 
 .actionButton {
-  background-color: #C9392F; /* Matching the color from your MovieCard.module.css */
+  background-color: #C9392F;
+  /* Matching the color from your MovieCard.module.css */
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -211,5 +242,70 @@
 
   .message {
     font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .movie_card_container {
+    width: 70%;
+  }
+
+  .skeleton_card {
+    width: calc(33.33% - 1.2rem);
+    /* 3 cartes par ligne */
+  }
+}
+
+/* Ajustements pour les écrans de taille moyenne (tablettes) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .headline {
+    font-size: 2rem;
+  }
+
+  .movie_card_container {
+    column-gap: 1.5rem;
+    width: 90%;
+    /* Utilise plus de largeur de l'écran */
+  }
+
+  .skeleton_card {
+    width: calc(50% - 0.75rem);
+    /* 2 cartes par ligne */
+  }
+}
+
+/* Ajustements pour les petits écrans (mobiles) */
+@media (max-width: 767px) {
+  .headline {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .slogan {
+    font-size: 0.9rem;
+    text-align: center;
+
+  }
+
+  .search_bar {
+    width: 80%;
+    /* La barre de recherche prend presque toute la largeur */
+  }
+
+  .movie_card_container {
+    width: 95%;
+    /* Le conteneur de cartes prend presque toute la largeur */
+    flex-direction: column;
+    /* Les cartes s'empilent */
+    align-items: center;
+    gap: 2rem;
+    /* Espace entre les cartes empilées */
+  }
+
+  .skeleton_card {
+    width: 90%;
+    /* Chaque carte prend la majeure partie de l'écran */
+    max-width: 300px;
+    /* Limite la taille pour qu'elle ne soit pas trop grande */
   }
 }

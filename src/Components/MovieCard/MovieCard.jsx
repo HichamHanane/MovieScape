@@ -13,7 +13,7 @@ function MovieCard({movie}) {
         <div className={styles.movie_card}>
             <img src={movie?.large_cover_image} width='300px' height="400px" alt="cover image" />
             <div className={styles.card_bottom}>
-                <p className={styles.ratings}><MdStar />2.5</p>
+                <p className={styles.ratings}><MdStar />{movie?.rating}</p>
                 <div className={styles.view_more}>
                     <Link to={`/movie/${movie?.id}`} className={styles.link}>View more</Link>
                     <IoIosArrowRoundForward color='white' />

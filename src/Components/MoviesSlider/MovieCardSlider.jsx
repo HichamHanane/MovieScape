@@ -34,7 +34,7 @@ function MovieCardSlider() {
             }, 500);
         }, 3000)
         return () => clearInterval(changeMovie);
-    }, [data])
+    }, [data , isLoading])
 
     const renderSkeletonCard = () => {
         return (

@@ -14,7 +14,7 @@ function App() {
 
   const fetchMovies = async () => {
     setIsLoading(true)
-    let response = await axios.get('https://yts.mx/api/v2/list_movies.json?quality=3D');
+    let response = await axios.get('https://yts.mx/api/v2/list_movies.json?quality=3D&limit=40');
     setIsLoading(false);
     console.log('Response :', response);
     let data = response.data.data.movies;
@@ -25,6 +25,8 @@ function App() {
   useEffect(() => {
     fetchMovies();
   }, []);
+
+  
   return (
     <>
       <MoviesContext.Provider value={{data:movies , isLoading}}>

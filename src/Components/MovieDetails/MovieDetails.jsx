@@ -119,7 +119,7 @@ function MovieDetails() {
                 <div className={styles.header_similar_movies}>
                     <h1>Similar Movies</h1>
                 </div>
-                {movie?.genres?.length > 0 && <SimilarMovies genre={movie?.genres[0]} />}
+                {movie?.genres?.length > 0 && <SimilarMovies genre={movie?.genres[Math.floor(Math.random() * movie?.genres.length)]} />}
             </section>
         </>
     )
