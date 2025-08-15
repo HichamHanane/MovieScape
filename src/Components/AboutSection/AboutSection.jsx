@@ -20,7 +20,7 @@ function AboutSection() {
         <button className={styles.movies_button} onClick={()=> navigate('/movies')}>Browser Movies</button>
       </div>
       <div className={styles.right_side}>
-        <Lottie animationData={movie_animation} />
+        <Lottie animationData={movie_animation}  className={styles.lottieAnimation} />
       </div>
     </section>
   )

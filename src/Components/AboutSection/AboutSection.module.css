@@ -2,19 +2,30 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 5rem;
     margin-top: 70px;
     padding: 0 50px;
 
 }
-/* .left_side{
-    width: 50%;
-} */
+.left_side{
+    /* background-color: burlywood; */
+    width: 70%;
+}
 
 .right_side{
     /* background-color: blueviolet; */
-    width: 80%;
-    
+    width: 40%;
+    display: flex;
+    justify-content: center;
     /* height: 300px; */
+}
+
+.lottieAnimation {
+  width: 500px;
+  height: 500px;
+  /* Or use percentages for a responsive design */
+  /* width: 100%; */
+  /* height: auto; */
 }
 
 .healine{

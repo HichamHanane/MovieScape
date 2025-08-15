@@ -29,7 +29,11 @@ function MoviesSection() {
     const indexOfLastMovie = currentPage * moviePerPage;
     const indexOfFirstMovie = indexOfLastMovie - moviePerPage;
     const currentMovies = filterMovie?.slice(indexOfFirstMovie, indexOfLastMovie);
-    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+    const paginate = (pageNumber) => {
+        setCurrentPage(pageNumber)
+        window.scroll(0, 0)
+
+    };
 
     const displayMovies = currentMovies?.map((movie, index) => {
         return <MovieCard movie={movie} key={index} />
@@ -38,13 +42,13 @@ function MoviesSection() {
     const handleSelectedValue = (e) => {
         const SelectedValue = e.target.value;
         setSelectedSort(SelectedValue);
-        console.log('selected :',SelectedValue);
-        
+        console.log('selected :', SelectedValue);
+
         if (SelectedValue == "rating") {
             let sortByRatings = filterMovie.sort((a, b) => a.rating - b.rating)
             filterMovie = sortByRatings;
             console.log('Movies filter by rating :', filterMovie);
-            
+
             return;
         }
         if (SelectedValue == "year") {
@@ -53,7 +57,12 @@ function MoviesSection() {
             console.log('Movies filter by sort :', filterMovie);
             return;
         }
-        filterMovie = data;
+        if (SelectedValue == " ") {
+            // console.log('no selected value');
+            filterMovie = data;
+            return;
+        }
+
     }
 
     const renderSkeletonCards = () => {
@@ -88,7 +97,7 @@ function MoviesSection() {
 
     useEffect(() => {
         setCurrentPage(1);
-    }, [searchMovie,selectedSort]);
+    }, [searchMovie, selectedSort]);
     return (
         <>
             <section className={styles.section_movies}>
@@ -104,7 +113,7 @@ function MoviesSection() {
                     <div className={styles.sort_by_div}>
                         <label htmlFor="Sort by">Sort by :</label>
                         <select name="sort_by" onChange={(e) => handleSelectedValue(e)} >
-                            <option value=""></option>
+                            <option value=" "></option>
                             <option value="rating">Ratings</option>
                             <option value="year">Year</option>
                         </select>
@@ -128,7 +137,7 @@ function MoviesSection() {
                 currentPage={currentPage}
                 paginate={paginate}
             />
-        </> 
+        </>
     )
 }
 

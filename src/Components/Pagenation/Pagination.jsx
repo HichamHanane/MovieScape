@@ -18,7 +18,6 @@ function Pagination({ moviePerPage, totalMovies, paginate , currentPage }) {
                     </li>
                 ))}
             </ul>
-            
         </nav>
     );
 }
