@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Pagenation.module.css'
-function Pagination({ moviePerPage, totalMovies, paginate }) {
+function Pagination({ moviePerPage, totalMovies, paginate , currentPage }) {
     const pageNumbers = [];
 
     for (let i = 1; i <= Math.ceil(totalMovies / moviePerPage); i++) {
@@ -12,12 +12,13 @@ function Pagination({ moviePerPage, totalMovies, paginate }) {
             <ul className={styles.pagination_list}>
                 {pageNumbers.map(number => (
                     <li key={number} className={styles.pagination_item}>
-                        <p onClick={() => paginate(number)} className={styles.pagination_link}>
+                        <p onClick={() => paginate(number)} className={`${styles.pagination_link}`} style={{backgroundColor:currentPage == number  ? '#C9392F' : null}}>
                             {number}
                         </p>
                     </li>
                 ))}
             </ul>
+            
         </nav>
     );
 }

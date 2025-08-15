@@ -51,9 +51,9 @@ function MoviesSection() {
             let sortByYear = filterMovie.sort((a, b) => a.year - b.year)
             filterMovie = sortByYear;
             console.log('Movies filter by sort :', filterMovie);
-
             return;
         }
+        filterMovie = data;
     }
 
     const renderSkeletonCards = () => {
@@ -125,9 +125,10 @@ function MoviesSection() {
             <Pagination
                 moviePerPage={moviePerPage}
                 totalMovies={filterMovie == "" ? data?.length : filterMovie?.length}
+                currentPage={currentPage}
                 paginate={paginate}
             />
-        </>
+        </> 
     )
 }
 
